@@ -1,6 +1,9 @@
+import Shell from '@/features/site/Shell';
+import theme from "@/features/site/theme";
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import { ThemeProvider } from '@mui/material/styles';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -18,7 +21,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} antialiased`}>
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme}>
+            <Shell>
+              {children}
+            </Shell>
+          </ThemeProvider>
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }

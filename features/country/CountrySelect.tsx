@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 
 export default function CountrySelect() {
     const router = useRouter()
-    const handleChange = (e) => {
+    const handleChange = (e: { target: { value: string; }; }) => {
         router.push(e.target.value)
     }
     return (

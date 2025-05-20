@@ -25,7 +25,7 @@ interface NavItem {
     href: string;
 }
 const navItems: NavItem[] = [
-    { label: 'Link 1', href: '/link1' },
+    { label: 'Home', href: '/' },
 ];
 
 export default function DrawerAppBar() {

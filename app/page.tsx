@@ -1,10 +1,7 @@
-import { notFound } from "next/navigation";
+import CountrySelect from "@/features/country/CountrySelect";
 
-export default function Home() {
-  if (Math.random() < 0.5) {
-    notFound();
-  }
-  return <>Date: {new Date().toLocaleString("en-US")}</>;
+export default async function Page() {
+  return (
+    <CountrySelect />
+  );
 }
-
-export const revalidate = 10;

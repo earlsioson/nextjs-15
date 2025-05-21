@@ -4,12 +4,15 @@ import CountryDetails from './CountryDetails';
 
 describe('CountryDetails', () => {
     it('displays country details correctly', () => {
+        // Use mock data from our existing mocks
         const country = canadaData[0];
 
         render(<CountryDetails country={country} />);
 
-        expect(screen.getByDisplayValue('Canada')).toBeInTheDocument();
-        expect(screen.getByDisplayValue('+1')).toBeInTheDocument();
-        expect(screen.getByDisplayValue('Americas')).toBeInTheDocument();
+        // Check if the country details are displayed correctly
+        // These will throw if not found, so no explicit assertions needed
+        screen.getByDisplayValue('Canada');
+        screen.getByDisplayValue('+1');
+        screen.getByDisplayValue('Americas');
     });
 });
